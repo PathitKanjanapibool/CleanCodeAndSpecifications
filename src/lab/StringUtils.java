@@ -12,6 +12,17 @@ public class StringUtils {
         // TODO: ถ้า text เป็น null ให้ throw IllegalArgumentException
         // TODO: วนนับสระ a,e,i,o,u (พิมพ์เล็ก/ใหญ่) แล้ว return
         //       (ใช้ตัวแปร local เท่านั้น = pure function)
-        return 0;
+        String Vowels = "aeiouAEIOU";
+        int count = 0;
+
+        if(text == null) throw new IllegalArgumentException();
+
+        for(int i = 0;i<text.length();i++){
+            int index = Vowels.indexOf(text.charAt(i));
+            if(index != -1)
+                count++;
+        }
+
+        return count;
     }
 }
